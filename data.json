@@ -1,34 +1,22 @@
 {
-    "actors": [
+    "productData": {
+        "description": "produ",
+        "impact": "ipma"
+    },
+    "targetAudienceData": {
+        "targetAudienceAge": "kid",
+        "gender": "female"
+    },
+    "contextData": [
         {
-            "Resembling personality": "Energetic",
-            "action": "Dancing",
-            "Age": "25",
-            "Body Shape": "Slim",
-            "Atire": "Casual clothes"
-        },
-        {
-            "Resembling personality": "Professional",
-            "action": "Presenting",
-            "Age": "40",
-            "Body Shape": "Average",
-            "Atire": "Business suit"
+            "bodyShape": "thin",
+            "actorResemblence": "Prajwal",
+            "actorAge": "23",
+            "actorAttire": "Swater",
+            "actorAction": "Eating",
+            "backGroundAudience": "Shouting",
+            "backGroundSpecification": "silei",
+            "moodAndLightening": "night"
         }
-    ],
-    "Background Audience": "Crowd at a music festival",
-    "Background Specification": "Nighttime with colorful lights",
-    "Lightings": "Multicolored and dynamic",
-    "Mood": "Festive",
-    "targetAudiance": [
-        {
-            "Age group": "16-30",
-            "Gender": "All"
-        }
-    ],
-    "Product": 
-        {
-            "Discription": "New wireless earbuds",
-            "Expected Impact": "High user interest"
-        }
-    
+    ]
 }
