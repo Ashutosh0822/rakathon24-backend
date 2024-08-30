@@ -12,16 +12,13 @@
     "Background Specification": "Daytime with clear sky",
     "Lightings": "Bright with focus on actors",
     "Mood": "Exciting",
-    "targetAudiance": [
-        {
+    "targetAudiance": {
             "Age group": "18-35",
             "Gender": "Male"
-        }
-    ],
-    "Product": [
-        {
+    },
+    "Product": {
             "Discription": "Latest gaming console",
             "Expected Impact": "Trying harder"
         }
-    ]
+
 }
