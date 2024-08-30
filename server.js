@@ -23,7 +23,7 @@ app.post('/generate-prompt', async (req, res) => {
     const product = data.Product[0];
 
     // Generate the prompt
-    const prompt = `Create a scenario where a ${actor['Resembling personality']} actor, aged ${actor.Age} with an ${actor['Body Shape']} body shape and wearing ${actor.Atire}, is engaged in ${actor.action} action. The background features ${backgroundAudience} during ${backgroundSpecification}. The lighting should be ${lightings}, focusing on the actor, and the overall mood should be ${mood}. The target audience is ${targetAudience.Gender}s aged ${targetAudience['Age group']}. The product being promoted is the ${product.Discription}, aiming for ${product['Expected Impact']}.`;
+    const prompt = `Create image of ${actor['Resembling personality']} actor, aged ${actor.Age} with ${actor['Body Shape']} body shape and wearing ${actor.Atire}, doing ${actor.action}. The background consists ${backgroundAudience} at ${backgroundSpecification} with lightings like ${lightings} and mood ${mood}. The target audience is ${targetAudience.Gender}s aged ${targetAudience['Age group']}. The product is ${product.Discription}, aiming for ${product['Expected Impact']}.`;
     const url = await getUrl(prompt);
     // Send the prompt as a response
     res.json({ prompt, url });
