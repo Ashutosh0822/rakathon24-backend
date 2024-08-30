@@ -1,25 +1,34 @@
-`{
+{
     "actors": [
         {
-            "Resembling personality": "Weak",
-            "action": "Fighting",
-            "Age": "30",
-            "Body Shape": "Athletic",
-            "Atire": "Armor"
+            "Resembling personality": "Energetic",
+            "action": "Dancing",
+            "Age": "25",
+            "Body Shape": "Slim",
+            "Atire": "Casual clothes"
+        },
+        {
+            "Resembling personality": "Professional",
+            "action": "Presenting",
+            "Age": "40",
+            "Body Shape": "Average",
+            "Atire": "Business suit"
         }
     ],
-    "Background Audience": "Spectators in a stadium",
-    "Background Specification": "Daytime with clear sky",
-    "Lightings": "Bright with focus on actors",
-    "Mood": "Exciting",
-    "targetAudiance": {
-            "Age group": "18-35",
-            "Gender": "Male"
-    },
-    "Product": {
-            "Discription": "Latest gaming console",
-            "Expected Impact": "Trying harder"
+    "Background Audience": "Crowd at a music festival",
+    "Background Specification": "Nighttime with colorful lights",
+    "Lightings": "Multicolored and dynamic",
+    "Mood": "Festive",
+    "targetAudiance": [
+        {
+            "Age group": "16-30",
+            "Gender": "All"
         }
-
+    ],
+    "Product": 
+        {
+            "Discription": "New wireless earbuds",
+            "Expected Impact": "High user interest"
+        }
+    
 }
-`
