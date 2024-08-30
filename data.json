@@ -1,0 +1,27 @@
+{
+    "actors": [
+        {
+            "Resembling personality": "Heroic",
+            "action": "Fighting",
+            "Age": "30",
+            "Body Shape": "Athletic",
+            "Atire": "Armor"
+        }
+    ],
+    "Background Audience": "Spectators in a stadium",
+    "Background Specification": "Daytime with clear sky",
+    "Lightings": "Bright with focus on actors",
+    "Mood": "Exciting",
+    "targetAudiance": [
+        {
+            "Age group": "18-35",
+            "Gender": "Male"
+        }
+    ],
+    "Product": [
+        {
+            "Discription": "Latest gaming console",
+            "Expected Impact": "High engagement"
+        }
+    ]
+}
