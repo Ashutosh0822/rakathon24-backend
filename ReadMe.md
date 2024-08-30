@@ -1,10 +1,13 @@
-{
+```
+curl --location --request POST 'http://localhost:8080/generate-prompt' \
+--header 'Content-Type: application/json' \
+--data-raw '{
     "actors": [
         {
-            "Resembling personality": "Weak",
+            "Resembling personality": "Varun Sharma",
             "action": "Fighting",
             "Age": "30",
-            "Body Shape": "Athletic",
+            "Body Shape": "Weak",
             "Atire": "Armor"
         }
     ],
@@ -14,8 +17,8 @@
     "Mood": "Exciting",
     "targetAudiance": [
         {
-            "Age group": "18-35",
-            "Gender": "Male"
+            "Age group": "35",
+            "Gender": "Female"
         }
     ],
     "Product": [
@@ -24,4 +27,6 @@
             "Expected Impact": "Trying harder"
         }
     ]
-}
+}'
+
+```

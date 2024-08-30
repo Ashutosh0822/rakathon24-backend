@@ -1,10 +1,8 @@
 import express from 'express';
-import fs from 'fs';
-import path from 'path';
 import bodyParser  from 'body-parser';
 import getUrl from './puppeteerScriptHotpot.js'
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -29,27 +27,5 @@ app.post('/generate-prompt', async (req, res) => {
     res.json({ prompt, url });
 });
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`App listening on port ${port}`)
   })
-// app.listen(port, () => {
-//     console.log(`Server is running on http://localhost:${port}`);
-    
-//     // Read JSON file and send POST request to the server
-//     const dataPath = path.join(__dirname, './data.json');
-//     fs.readFile(dataPath, 'utf8', (err, jsonData) => {
-//         if (err) {
-//             console.error('Error reading JSON file:', err);
-//             return;
-//         }
-
-//         const axios = require('axios');
-//         axios.post(`http://localhost:${port}/generate-prompt`, JSON.parse(jsonData))
-//             .then(response => {
-
-//                 console.log('Generated Prompt:', response.data.prompt);
-//             })
-//             .catch(error => {
-//                 console.error('Error generating prompt:', error);
-//             });
-//     });
-// });

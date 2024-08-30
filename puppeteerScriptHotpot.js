@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer';
 const getImageUrlFromHotpot = async (prompt) => {
     // Launch browser in incognito mode
     const browser = await puppeteer.launch({
-        // headless: false, // Set to 'true' to run in headless mode
+        headless: true, // Set to 'true' to run in headless mode
         args: ['--incognito']
     });
     console.log(browser.browserContexts);
@@ -26,11 +26,11 @@ const getImageUrlFromHotpot = async (prompt) => {
     
     await page.evaluate(async() => {
       await new Promise(function(resolve) { 
-             setTimeout(resolve, 15000)
+             setTimeout(resolve, 10000)
       });
   });
 
-    await page.waitForSelector('div.imageBox img', { timeout: 15000 });
+    await page.waitForSelector('div.imageBox img', { timeout: 30000 });
 
     // Get the src attribute of the img inside div with class 'A'
     const imgSrc = await page.$eval('div.imageBox img', img => img.src);
