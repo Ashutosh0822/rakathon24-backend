@@ -2,7 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import getUrl from './puppeteerScriptHotpot.js';
 import cors from 'cors'
-
+import getImagesValidation from './mistralEvaluateImages.js';
+import getInstagramUrls from "./instaScrapper.js";
 const app = express();
 const port = 8080;
 
@@ -19,16 +20,37 @@ app.use(bodyParser.json());
 app.post('/experiment', async (req, res) => {
     const data = req.body;
     const imgUrls = [];
-
+    console.log(data)
     // Generate prompt and URL for each context entry
     for (let i = 0; i < data.contextData.length; i++) {
         const prompt = await getPrompt(data, i);
         imgUrls.push(await getUrl(prompt));
     }
-    // const validationResponse = await getImagesValidation(imageUrls)
-    // console.log(validationResponse);
+    console.log("calling validation service")
+    const validationResponse = await getImagesValidation(imgUrls)
+    console.log(validationResponse);
     // res.json({ imageUrls, validationResponse });
-    res.json({ imgUrls });
+    res.json({ imgUrls, validationResponse });
+});
+
+app.post('/validate',async (req,res)=>{
+    // console.log(req)
+    const images= req.body.imageUrls;
+    console.log(images);
+    const validationResponse = await getImagesValidation(images);
+    // const validationResponse = images;
+    console.log(validationResponse.images);
+    res.json(validationResponse.images);
+});
+
+
+app.post('/instagram-verifier',async (req,res)=>{
+    const instaId = req.body.instaId;
+    // const 
+    const data= await getInstagramUrls(instaId);
+    const url1 = data.split("https://cdn-v.inflact.com")
+    const urlAll = url1.map(url=> url.split('?url=')[1]).map(url => url.split("\"")[0]).map(url=> decodeURIComponent(url));
+    res.json(urlAll.toString());
 });
 
 // Function to generate prompt
