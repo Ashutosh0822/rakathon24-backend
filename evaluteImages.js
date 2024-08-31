@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 // Replace with your OpenAI API key
-const API_KEY = '';
+const API_KEY = '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';
 
 
 async function evaluateImages(imageUrls, params) {
     // Define the prompt describing the evaluation criteria
+    params = params?params:["Artistic Expression","Memorability","Demographic sensitivity","Emotion Elicitation"];
     const prompt = `
     Evaluate the following image based on these parameters: ${params.toString()}
 
@@ -13,7 +14,7 @@ async function evaluateImages(imageUrls, params) {
     
     For each parameter, categorize as 'Not Satisfying', 'Maybe', or 'Strongly Supporting', and explain briefly.
     `;
-
+    console.log(prompt);
     try {
         // Make a request to the OpenAI API
         const response = await axios.post(
